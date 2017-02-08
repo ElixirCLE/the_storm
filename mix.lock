@@ -1,0 +1,9 @@
+%{"distillery": {:hex, :distillery, "1.1.0", "e9943bd29557e9c252a051d8ac4b47e597cd9bf2a74332b8628eab4954eb51d7", [:mix], []},
+  "elixir_make": {:hex, :elixir_make, "0.3.0", "285147fa943806eee82f6680b7b446b5569bcf3ee8328fa0a7c200ffc44fbaba", [:mix], []},
+  "nerves": {:hex, :nerves, "0.4.7", "c8d08348e6f717cf140da26dc374bcf2f6f7c2bec646073aeab049e08b588173", [:mix], [{:distillery, "~> 1.0", [hex: :distillery, optional: false]}]},
+  "nerves_io_neopixel": {:hex, :nerves_io_neopixel, "0.2.0", "012112ba1715186383f187ab28ce2245d55e98b1957702163e7e0223bfbef409", [:make, :mix], []},
+  "nerves_neopixel": {:hex, :nerves_neopixel, "0.3.0", "afd9c906896f0b39a2bea61cf01afe304d550bc74c789a5e872d64df5e1ae559", [:make, :mix], [{:elixir_make, "~> 0.3.0", [hex: :elixir_make, optional: false]}]},
+  "nerves_system_br": {:hex, :nerves_system_br, "0.9.4", "5096a9dfec49d4663ccb94c4a4fe45885303fbf31108f7e9400369bdec94b5e7", [:mix], []},
+  "nerves_system_rpi3": {:hex, :nerves_system_rpi3, "0.10.0", "dc5c05e1caf13027aaa57b4142d128513d9c29acc3284cc984a6770592ed4b34", [:mix], [{:nerves, "~> 0.4.0", [hex: :nerves, optional: false]}, {:nerves_system_br, "~> 0.9.2", [hex: :nerves_system_br, optional: false]}, {:nerves_toolchain_arm_unknown_linux_gnueabihf, "~> 0.9.0", [hex: :nerves_toolchain_arm_unknown_linux_gnueabihf, optional: false]}]},
+  "nerves_toolchain_arm_unknown_linux_gnueabihf": {:hex, :nerves_toolchain_arm_unknown_linux_gnueabihf, "0.9.0", "5a1bca8c46776ad24c358ab58800ed470f91a3e294ac6eb8ffda0041954781e1", [:mix], [{:nerves, "~> 0.4.0", [hex: :nerves, optional: false]}, {:nerves_toolchain_ctng, "~> 0.8.0", [hex: :nerves_toolchain_ctng, optional: false]}]},
+  "nerves_toolchain_ctng": {:hex, :nerves_toolchain_ctng, "0.8.0", "6dff7ed51e1711c5f4da3d559bc528a8265e3dd950dda95f4d6832aed9dbe320", [:mix], []}}
