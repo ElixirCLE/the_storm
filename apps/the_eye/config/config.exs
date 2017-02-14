@@ -5,6 +5,14 @@
 # is restricted to this project.
 use Mix.Config
 
+config :the_eye, :wlan0,
+  ssid: "CoverMyMeds-Guest",
+  key_mgmt: :"WPA-PSK",
+  psk: "technology"
+
+config :nerves_interim_wifi,
+  regulatory_domain: "US"
+
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 # Uncomment to use target specific configurations

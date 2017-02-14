@@ -25,11 +25,13 @@ defmodule TheEye.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {TheEye, []},
-     applications: [:logger, :lightning]]
+     applications: [:logger, :nerves_interim_wifi]]
   end
 
   def deps do
-    [{:nerves, "~> 0.4.0"}, {:lightning, in_umbrella: true}]
+    [{:nerves, "~> 0.4.0"},
+     {:nerves_interim_wifi, "~> 0.1.0"},
+    ]
   end
 
   def system(target) do
@@ -38,7 +40,8 @@ defmodule TheEye.Mixfile do
 
   def aliases do
     ["deps.precompile": ["nerves.precompile", "deps.precompile"],
-     "deps.loadpaths":  ["deps.loadpaths", "nerves.loadpaths"]]
+     "deps.loadpaths":  ["deps.loadpaths", "nerves.loadpaths"],
+    "burn": ["compile", "firmware", "firmware.burn"]]
   end
 
 end

@@ -1,19 +1,19 @@
 defmodule TheEye do
   use Application
 
-  alias Lightning
+  @kernel_module "brcmfmac"
+  @interface :wlan0
+  @wifi_cfg Application.get_env(:the_eye, @interface)
 
-  # See http://elixir-lang.org/docs/stable/elixir/Application.html
-  # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
     # Define workers and child supervisors to be supervised
     children = [
-      # worker(TheEye.Worker, [arg1, arg2, arg3]),
+      worker(Task, [fn -> init_kernel_modules() end], restart: :transient, id: Nerves.Init.KernelModules),
+      worker(Task, [fn -> init_network() end], restart: :transient, id: Nerves.Init.Network)
     ]
 
-    Lightning.set_light
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
@@ -21,4 +21,11 @@ defmodule TheEye do
     Supervisor.start_link(children, opts)
   end
 
+  def init_kernel_modules() do
+    System.cmd("modprobe", [@kernel_module])
+  end
+
+  def init_network() do
+    Nerves.InterimWiFi.setup(@interface, @wifi_cfg)
+  end
 end
