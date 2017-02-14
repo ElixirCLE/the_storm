@@ -13,6 +13,11 @@ config :the_eye, :wlan0,
 config :nerves_interim_wifi,
   regulatory_domain: "US"
 
+config :logger, level: :debug
+
+config :nerves, :firmware,
+  rootfs_additions: "config/rootfs-additions"
+
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 # Uncomment to use target specific configurations
