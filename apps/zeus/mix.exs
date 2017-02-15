@@ -13,6 +13,7 @@ defmodule Zeus.Mixfile do
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     aliases: aliases,
      deps: deps()]
   end
 
@@ -38,5 +39,11 @@ defmodule Zeus.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"}]
+  end
+
+  def aliases do
+    [
+      "s": ["phoenix.server"],
+    ]
   end
 end
