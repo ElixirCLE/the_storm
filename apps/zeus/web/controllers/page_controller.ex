@@ -3,12 +3,11 @@ defmodule Zeus.PageController do
   alias Zeus.ColorParsing
 
   def index(conn, _params) do
-    render conn, "index.html"
+    render conn, "index.html", color: nil, brightness: nil
   end
 
-  def update(conn, %{"choose" => %{"color" => chosen_color} } ) do
-    IO.puts chosen_color |> ColorParsing.parse_rgb_hex
-    #TODO: pass parsed color to something that can change color of neopixel
-    render conn, "index.html"
+  def update(conn, %{"choose" => %{"color" => chosen_color, "brightness" => chosen_brightness} } ) do
+    chosen_color |> ColorParsing.parse_rgb_hex |> Lightning.Control.change_color(chosen_brightness)
+    render conn, "index.html", color: chosen_color, brightness: chosen_brightness
   end
 end

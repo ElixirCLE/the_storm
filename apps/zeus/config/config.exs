@@ -8,7 +8,7 @@ use Mix.Config
 # Configures the endpoint
 config :zeus, Zeus.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "Gh3ofmtXIMgiUccNZVpQxZg5vYGzXKnNhH00/9xxB6O1JwIKkB8vifQWz+ODz4S/",
+  secret_key_base: "Y+UM3Xb7PBo+7rGmSxILcUhFIf4eGRGTN2eCoFXzZ5h8Q+3fZWDL+adFoNkxHhbS",
   render_errors: [view: Zeus.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Zeus.PubSub,
            adapter: Phoenix.PubSub.PG2]

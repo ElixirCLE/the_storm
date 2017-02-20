@@ -1,18 +1,8 @@
-<style>
-.color-picker {
-  height: 50px;
-  width: 85px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 12px;
-}
-</style>
-
 <div class="jumbotron">
   <%= form_for @conn, page_path(@conn, :update), [as: :choose], fn f -> %>
     <h2>Choose a color</h2>
-    <%= color_input f, :color, class: "color-picker", value: "#ffffff" %>
-    <%= submit "Search", class: "btn btn-primary" %>
+    <%= color_input f, :color, class: "color-picker", value: @color || "#ffffff" %>
+    <%= range_input f, :brightness, class: "brightness-picker", min: "0", max: "150", value: @brightness || "120" %>
+    <%= submit "Change color", class: "btn btn-primary" %>
   <% end %>
 </div>
