@@ -18,6 +18,10 @@ config :logger, level: :debug
 config :nerves, :firmware,
   rootfs_additions: "config/rootfs-additions"
 
+config :the_eye, :channel0,
+  pin: 18,
+  count: 1
+
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 # Uncomment to use target specific configurations

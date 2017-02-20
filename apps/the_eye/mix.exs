@@ -25,13 +25,15 @@ defmodule TheEye.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {TheEye, []},
-     applications: [:logger, :nerves_interim_wifi, :zeus]]
+     applications: [:logger, :nerves_interim_wifi, :nerves_neopixel, :zeus]]
   end
 
   def deps do
-    [{:nerves, "~> 0.4.0"},
-     {:nerves_interim_wifi, "~> 0.1.0"},
-     {:zeus, in_umbrella: true}
+    [
+      {:nerves, "~> 0.4.0"},
+      {:nerves_interim_wifi, "~> 0.1.0"},
+      {:zeus, in_umbrella: true},
+      {:nerves_neopixel, "~> 0.3.0"}
     ]
   end
 
