@@ -7,7 +7,7 @@ defmodule Zeus.PageController do
   end
 
   def update(conn, %{"choose" => %{"color" => chosen_color, "brightness" => chosen_brightness} } ) do
-    chosen_color |> ColorParsing.parse_rgb_hex |> Lightning.Control.change_color(chosen_brightness)
+    chosen_color |> ColorParsing.parse_rgb_hex |> Lightning.Control.change_color(String.to_integer(chosen_brightness))
     render conn, "index.html", color: chosen_color, brightness: chosen_brightness
   end
 end
