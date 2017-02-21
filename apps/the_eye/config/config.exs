@@ -6,9 +6,18 @@
 use Mix.Config
 
 config :the_eye, :wlan0,
-  ssid: "CoverMyMeds-Guest",
   key_mgmt: :"WPA-PSK",
+  ssid: "CoverMyMeds-Guest",
   psk: "technology"
+
+config :zeus, Zeus.Endpoint,
+  http: [port: 80],
+  url: [host: "localhost", port: 80],
+  secret_key_base: "Q8bCLHDz9QAcJ8ZRA2fWwUWSbglcYv3YxiLhBB2ZlRoqJydRyIWrtkllBPXtdaPp",
+  root: Path.dirname(__DIR__),
+  server: true,
+  render_errors: [accepts: ~w(html json)],
+  pubsub: [name: Nerves.PubSub]
 
 config :nerves_interim_wifi,
   regulatory_domain: "US"
@@ -18,8 +27,8 @@ config :logger, level: :debug
 config :nerves, :firmware,
   rootfs_additions: "config/rootfs-additions"
 
-# Import target specific config. This must remain at the bottom
-# of this file so it overrides the configuration defined above.
-# Uncomment to use target specific configurations
+config :lightning, :channel0,
+  pin: 18,
+  count: 1
 
-# import_config "#{Mix.Project.config[:target]}.exs"
+config :lightning, renderer: Nerves.Neopixel

@@ -80,23 +80,3 @@ form.link, form.button {
     border-bottom: 0;
   }
 }
-/* This file is for your main application css. */
-
-.color-picker {
-  height: 50px;
-  width: 85px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 12px;
-}
-
-input.brightness-picker {
-  width: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 12px;
-}
-
-
-/*# sourceMappingURL=app.css.map*/

@@ -36,7 +36,7 @@ defmodule Zeus.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_zeus_key",
-    signing_salt: "wxsbw8Vg"
+    signing_salt: "X8voisJK"
 
   plug Zeus.Router
 end
