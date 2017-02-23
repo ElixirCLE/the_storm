@@ -35,6 +35,7 @@ defmodule Zapdos.Mixfile do
   defp deps do
     [
       {:extwitter, "~> 0.8"},
+      {:lightning, in_umbrella: true} 
     ]
   end
 end
