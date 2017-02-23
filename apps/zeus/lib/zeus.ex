@@ -18,6 +18,9 @@ defmodule Zeus do
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Zeus.Supervisor]
     Supervisor.start_link(children, opts)
+
+    :timer.apply_interval(:timer.seconds(15), Zapdos, :get_tweet("#cmm_storm", 1))
+    |> IO.puts
   end
 
   # Tell Phoenix to update the endpoint configuration
