@@ -13,6 +13,7 @@ defmodule TheEye do
     children = [
       worker(Task, [fn -> init_kernel_modules() end], restart: :transient, id: Nerves.Init.KernelModules),
       worker(Task, [fn -> init_network() end], restart: :transient, id: Nerves.Init.Network),
+      worker(Task, [fn -> init_zapdos() end], restart: :transient),
       worker(Nerves.Neopixel, [neopixel_cfg, nil]),
     ]
 
@@ -28,5 +29,9 @@ defmodule TheEye do
 
   def init_network() do
     Nerves.InterimWiFi.setup(@interface, @wifi_cfg)
+  end
+
+  def init_zapdos() do
+    spawn(fn -> Zapdos.get_tweets('#cmm_storm') end)
   end
 end
