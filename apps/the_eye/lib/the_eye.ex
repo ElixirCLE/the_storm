@@ -32,6 +32,8 @@ defmodule TheEye do
   end
 
   def init_zapdos() do
-    spawn(fn -> Zapdos.get_tweets('#cmm_storm') end)
+    IO.puts "Starting Zapdos"
+    pid = spawn(fn -> Zapdos.get_tweets('#cmm_storm') end)
+    IO.puts "Zapdos started: #{pid}"
   end
 end
