@@ -1,5 +1,5 @@
 defmodule Zapdos do
-  alias Zapdos.ColorParsing
+  alias Lightning.ColorParsing
 
   @moduledoc """
   Documentation for Zapdos.

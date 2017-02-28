@@ -1,4 +1,4 @@
-defmodule Zapdos.ColorParsing do
+defmodule Lightning.ColorParsing do
   def get_color("Color: #" <> <<raw_hex::bytes-size(6)>> <> _), do: raw_hex
 
   def get_color(_), do: "FFFFFF"
@@ -12,4 +12,3 @@ defmodule Zapdos.ColorParsing do
     hex_value |> String.upcase |> Base.decode16! |> :binary.decode_unsigned
   end
 end
-

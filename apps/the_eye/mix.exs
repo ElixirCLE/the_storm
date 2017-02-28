@@ -45,7 +45,7 @@ defmodule TheEye.Mixfile do
   def aliases do
     ["deps.precompile": ["nerves.precompile", "deps.precompile"],
      "deps.loadpaths":  ["deps.loadpaths", "nerves.loadpaths"],
-     "burn": ["compile", "firmware", "firmware.burn"]]
+     "burn": ["clean", "compile", "firmware", "firmware.burn"]]
   end
 
 end
