@@ -34,7 +34,8 @@ defmodule TheEye.Mixfile do
       {:nerves_interim_wifi, "~> 0.1.0"},
       {:nerves_neopixel, "~> 0.3.0"},
       {:lightning, in_umbrella: true},
-      {:zeus, in_umbrella: true},
+      {:zapdos, in_umbrella: true},
+      {:zeus, in_umbrella: true}
     ]
   end
 

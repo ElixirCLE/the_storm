@@ -39,8 +39,7 @@ defmodule Zeus.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:lightning, in_umbrella: true},
-     {:zapdos, in_umbrella: true}]
+     {:lightning, in_umbrella: true}]
   end
 
   def aliases do
