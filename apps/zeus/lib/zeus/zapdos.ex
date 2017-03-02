@@ -6,9 +6,11 @@ defmodule Zapdos do
   """
 
   def get_tweets(query) do
+    IO.puts("Looking for tweets with '#{query}'")
     ExTwitter.stream_filter(track: query)
     |> Stream.map(fn(tweet) -> tweet.text end)
-    |> Stream.map(&(update_color(&1)))
+    |> Stream.map(fn(x) -> IO.puts "#{x}\n---------------\n" end)
+    #    |> Stream.map(&(update_color(&1)))
     |> Enum.to_list
   end
 
