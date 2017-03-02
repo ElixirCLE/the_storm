@@ -14,6 +14,7 @@ defmodule TheEye do
       worker(Task, [fn -> init_kernel_modules() end], restart: :transient, id: Nerves.Init.KernelModules),
       worker(Task, [fn -> init_network() end], restart: :transient, id: Nerves.Init.Network),
       worker(Nerves.Neopixel, [neopixel_cfg, nil]),
+      worker(Task, [fn -> IO.puts("Starting Zapdos"); Zapdos.get_tweets('#cmm_storm') end], restart: :transient),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

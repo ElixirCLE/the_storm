@@ -19,7 +19,7 @@ defmodule Zapdos.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger],
+    [extra_applications: [:logger, :extwitter],
      mod: {Zapdos.Application, []}]
   end
 
@@ -35,7 +35,7 @@ defmodule Zapdos.Mixfile do
   defp deps do
     [
       {:extwitter, "~> 0.8"},
-      {:lightning, in_umbrella: true} 
+      {:lightning, in_umbrella: true}
     ]
   end
 end

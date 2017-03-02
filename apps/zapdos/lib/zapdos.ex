@@ -6,6 +6,8 @@ defmodule Zapdos do
   """
 
   def get_tweets(query) do
+    # Process.sleep(30000)
+    IO.puts "get_tweets: #{query}"
     ExTwitter.stream_filter(track: query)
     |> Stream.map(fn(tweet) -> tweet.text end)
     |> Stream.map(&(update_color(&1)))
@@ -13,6 +15,7 @@ defmodule Zapdos do
   end
 
   defp update_color(text) do
+    IO.puts "update_color: #{text}"
     ColorParsing.get_color(text)
     |> ColorParsing.parse_rgb_hex
     |> Lightning.Control.change_color(150)

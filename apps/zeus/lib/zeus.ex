@@ -10,7 +10,6 @@ defmodule Zeus do
     children = [
       # Start the endpoint when the application starts
       supervisor(Zeus.Endpoint, []),
-      worker(Task, [fn -> IO.puts("Starting Zapdos"); Zapdos.get_tweets('#cmm_storm') end], restart: :transient),
       # Start your own worker by calling: Zeus.Worker.start_link(arg1, arg2, arg3)
       # worker(Zeus.Worker, [arg1, arg2, arg3]),
     ]
