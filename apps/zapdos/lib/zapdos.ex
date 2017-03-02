@@ -6,7 +6,7 @@ defmodule Zapdos do
   """
 
   def get_tweets(query) do
-    # Process.sleep(30000)
+    Process.sleep(10000)
     IO.puts "get_tweets: #{query}"
     ExTwitter.stream_filter(track: query)
     |> Stream.map(fn(tweet) -> tweet.text end)

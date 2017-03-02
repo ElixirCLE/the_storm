@@ -10,8 +10,8 @@ defmodule Lightning.Control do
   end
 
   def change_color(ch, color, brightness) do
-    IO.puts renderer
-    renderer.render(ch, {brightness, [color]})
+    IO.puts renderer()
+    renderer().render(ch, {brightness, [color]})
   end
 
   def renderer do
