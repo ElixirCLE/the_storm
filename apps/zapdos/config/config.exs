@@ -29,9 +29,4 @@ use Mix.Config
 #
 #     import_config "#{Mix.env}.exs"
 
-config :extwitter, :oauth, [
-   consumer_key: "",
-   consumer_secret: "",
-   access_token: "",
-   access_token_secret: ""
-]
+config :lightning, renderer: Lightning.NeopixelStandin

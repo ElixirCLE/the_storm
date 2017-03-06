@@ -9,12 +9,14 @@ defmodule Lightning.Control do
     change_color(0, color, brightness)
   end
 
-  def change_color(ch, color, brightness) do
+  def change_color(channel, color, brightness) do
     IO.puts renderer()
-    renderer().render(ch, {brightness, [color]})
+    IO.puts("Rendering #{inspect([color])} at brightness #{inspect(brightness)} to channel #{inspect(channel)}")
+    renderer().render(channel, {brightness, [color]})
   end
 
   def renderer do
-    @renderer || Lightning.NeopixelStandin
+    # @renderer || Lightning.NeopixelStandin
+    Nerves.Neopixel
   end
 end
