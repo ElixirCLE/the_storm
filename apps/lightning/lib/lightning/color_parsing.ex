@@ -1,4 +1,7 @@
-defmodule Zeus.ColorParsing do
+defmodule Lightning.ColorParsing do
+  def get_color("Color: #" <> <<raw_hex::bytes-size(6)>> <> _), do: raw_hex
+
+  def get_color(_), do: "FFFFFF"
 
   def parse_rgb_hex(rgb_value) do
     [r1, r2, g1, g2, b1, b2] = rgb_value |> String.codepoints |> Enum.take(-6)

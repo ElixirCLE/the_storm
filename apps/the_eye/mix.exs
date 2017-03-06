@@ -25,16 +25,18 @@ defmodule TheEye.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {TheEye, []},
-     applications: [:logger, :nerves_interim_wifi, :nerves_neopixel, :lightning, :zeus]]
+     applications: [:logger, :nerves_interim_wifi, :nerves_ntp, :nerves_neopixel, :oauther, :extwitter, :lightning, :zeus]]
   end
 
   def deps do
     [
       {:nerves, "~> 0.4.0"},
       {:nerves_interim_wifi, "~> 0.1.0"},
+      {:nerves_ntp, "~> 0.1.1"},
       {:nerves_neopixel, "~> 0.3.0"},
+      {:extwitter, "~> 0.8"},
       {:lightning, in_umbrella: true},
-      {:zeus, in_umbrella: true},
+      {:zeus, in_umbrella: true}
     ]
   end
 
@@ -45,7 +47,7 @@ defmodule TheEye.Mixfile do
   def aliases do
     ["deps.precompile": ["nerves.precompile", "deps.precompile"],
      "deps.loadpaths":  ["deps.loadpaths", "nerves.loadpaths"],
-     "burn": ["compile", "firmware", "firmware.burn"]]
+     "burn": ["clean", "compile", "firmware", "firmware.burn"]]
   end
 
 end

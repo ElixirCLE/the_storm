@@ -1,6 +1,6 @@
 defmodule Zeus.PageController do
   use Zeus.Web, :controller
-  alias Zeus.ColorParsing
+  alias Lightning.ColorParsing
 
   def index(conn, _params) do
     render conn, "index.html", color: nil, brightness: nil
