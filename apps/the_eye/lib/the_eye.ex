@@ -27,6 +27,6 @@ defmodule TheEye do
   end
 
   def init_network() do
-    Nerves.InterimWiFi.setup(@interface, @wifi_cfg)
+    Nerves.Network.setup(@interface, @wifi_cfg)
   end
 end
