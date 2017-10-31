@@ -5,10 +5,12 @@
 # is restricted to this project.
 use Mix.Config
 
-config :the_eye, :wlan0,
-  key_mgmt: :"WPA-PSK",
-  ssid: "CoverMyMeds-Guest",
-  psk: "technology"
+config :the_eye, :default,
+  wlan0: [
+    key_mgmt: :"WPA-PSK",
+    ssid: "CoverMyMeds-Guest",
+    psk: "technology"
+  ]
 
 config :zeus, Zeus.Endpoint,
   http: [port: 80],
@@ -19,7 +21,7 @@ config :zeus, Zeus.Endpoint,
   render_errors: [accepts: ~w(html json)],
   pubsub: [name: Nerves.PubSub]
 
-config :nerves_interim_wifi,
+config :nerves_network,
   regulatory_domain: "US"
 
 config :logger, level: :debug

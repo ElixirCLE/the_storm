@@ -7,7 +7,7 @@ defmodule TheEye.Mixfile do
     [app: :the_eye,
      version: "0.1.0",
      target: @target,
-     archives: [nerves_bootstrap: "~> 0.2.1"],
+     archives: [nerves_bootstrap: "~> 0.6.3"],
 
      deps_path: "../../deps/#{@target}",
      build_path: "../../_build/#{@target}",
@@ -25,14 +25,14 @@ defmodule TheEye.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {TheEye, []},
-     applications: [:logger, :nerves_interim_wifi, :nerves_neopixel, :lightning, :zeus]]
+     applications: [:logger, :nerves_network, :nerves_neopixel, :lightning, :zeus]]
   end
 
   def deps do
     [
-      {:nerves, "~> 0.4.0"},
-      {:nerves_interim_wifi, "~> 0.1.0"},
-      {:nerves_neopixel, "~> 0.3.0"},
+      {:nerves, "~> 0.7.5"},
+      {:nerves_neopixel, "~> 0.3.1"},
+      {:nerves_network, "~> 0.3"},
       {:lightning, in_umbrella: true},
       {:zeus, in_umbrella: true},
     ]
